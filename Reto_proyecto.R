@@ -22,7 +22,7 @@ print("Dataframe tras ordenar y renombrar columnas:")
 print(df)
 
 # 4. Creación de nuevas columnas y agregación de datos
-df <- df %>% mutate(eficiencia = consumo*potencia)
+df <- df %>% mutate(eficiencia = consumo/potencia)
 print("Dataframe tras crear nuevas columnas:")
 print(df)
 df_avg_consumo_max_potencia <- df %>% 
@@ -49,4 +49,4 @@ df_wider <- df_longer %>%
   summarize(valor_medio = mean(valor)) %>% 
   pivot_wider(id_cols = c(cyl,gear,tipo_transmision), names_from = medida, values_from = valor_medio)
 print("Transformación a wider:")
-print(df_longer)
+print(df_wider)
