@@ -27,7 +27,7 @@ print("Dataframe tras crear nuevas columnas:")
 print(df)
 df_avg_consumo_max_potencia <- df %>% 
   group_by(cyl) %>% 
-  summarize(consumo_medio = median(consumo), potencia_maxima = max(potencia))
+  summarize(consumo_medio = mean(consumo), potencia_maxima = max(potencia))
 print("Dataframe tras agregar datos:")
 print(df_avg_consumo_max_potencia)
 
